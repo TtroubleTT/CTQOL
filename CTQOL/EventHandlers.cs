@@ -13,13 +13,13 @@ namespace QOL
         public static void OnAddingTarget(AddingTargetEventArgs ev)
         {
             //if (ev.Target == Exiled.API.Features.Player.Get(PlayerRoles.RoleTypeId.Tutorial))
-            Log.Info(ev.Player.Nickname + " has triggered 096");
+            Log.Info(ev.Target.Nickname + " has triggered 096");
 
         }
 
         public static void OnVerified(VerifiedEventArgs ev)
         {
-            ev.Player.Broadcast(15, "<color=green>Welcome to Chaos Theory!\nPlease join our discord: </color><color=yellow>discord.gg/ChaosSCP</color>");
+            ev.Player.Broadcast(10, "<color=green>Welcome to Chaos Theory!\nFeel free to join our discord: </color><color=yellow>discord.gg/ChaosSCP</color>");
         }
     }
 }
