@@ -5,7 +5,9 @@ using Exiled.Events;
 using Exiled.Events.EventArgs.Scp096;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
+using Exiled.API.Interfaces;
 using Exiled.Events.EventArgs.Scp173;
+using System.ComponentModel;
 
 namespace QOL
 {
@@ -15,20 +17,22 @@ namespace QOL
         //When a player joins the server it sends them a private broadcast welcoming them.
         public static void OnVerified(VerifiedEventArgs ev)  //Note: use OnVerified instead of Onjoin so it can process itself
         {
-            ev.Player.Broadcast(10, "<color=green>Welcome to Chaos Theory!\nJoin our discord: </color><color=yellow>discord.gg/ChaosSCP</color>");
+            ev.Player.Broadcast(10, QOL.plugin.Config.MyWelcome);
         }
 
         //So tutorial cant Enrage 096
         public static void OnAddingTarget(AddingTargetEventArgs ev) //Use on adding target instead of on enrage so you can use the target variable
         {
-            
-            if(ev.Target.Role.Type == RoleTypeId.Tutorial)
+            if(QOL.plugin.Config.tutorial_notrigger_96 == true)
             {
-                ev.IsAllowed = false;
-            }
-            else
-            {
-                ev.IsAllowed = true;
+                if (ev.Target.Role.Type == RoleTypeId.Tutorial)
+                {
+                    ev.IsAllowed = false;
+                }
+                else
+                {
+                    ev.IsAllowed = true;
+                }
             }
 
         }
@@ -57,6 +61,7 @@ namespace QOL
             Log.Info(ev.Player.Nickname + " is triggering 173");
         }
         */
+       
 
         //Remote keycard
         /*
