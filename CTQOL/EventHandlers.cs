@@ -26,6 +26,10 @@ namespace QOL
             {
                 ev.IsAllowed = false;
             }
+            else
+            {
+                ev.IsAllowed = true;
+            }
 
         }
 
