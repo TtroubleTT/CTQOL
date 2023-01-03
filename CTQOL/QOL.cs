@@ -4,6 +4,7 @@ using Exiled.Events.Handlers;
 using Exiled.Events;
 using Exiled.Events.EventArgs.Scp096;
 using Exiled.Events.EventArgs.Player;
+using static UnityEngine.GraphicsBuffer;
 
 namespace QOL
 {
@@ -15,15 +16,19 @@ namespace QOL
 
         public override void OnEnabled()
         {
-            Scp096.AddingTarget += EventHandlers.OnAddingTarget;
             Exiled.Events.Handlers.Player.Verified += EventHandlers.OnVerified;
+            Scp096.AddingTarget += EventHandlers.OnAddingTarget;
+            Scp173.Blinking += EventHandlers.OnBlinking;
+            Exiled.Events.Handlers.Player.InteractingDoor += EventHandlers.OnInteractingDoor;
 
             base.OnEnabled();
         }
         public override void OnDisabled()
         {
-            Scp096.AddingTarget -= EventHandlers.OnAddingTarget;
             Exiled.Events.Handlers.Player.Verified -= EventHandlers.OnVerified;
+            Scp096.AddingTarget -= EventHandlers.OnAddingTarget;
+            Scp173.Blinking -= EventHandlers.OnBlinking;
+            Exiled.Events.Handlers.Player.InteractingDoor -= EventHandlers.OnInteractingDoor;
 
             base.OnDisabled();
         }
