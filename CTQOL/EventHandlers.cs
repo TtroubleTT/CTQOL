@@ -30,6 +30,7 @@ namespace QOL
         }
 
         // Stops tutorial from triggering 173
+        /*
         public static void OnBlinking(BlinkingEventArgs ev)
         {
             bool canMove = true;
@@ -51,12 +52,15 @@ namespace QOL
             }
             Log.Info(ev.Player.Nickname + " is triggering 173");
         }
+        */
 
         //Remote keycard
+        /*
         public static void OnInteractingDoor(InteractingDoorEventArgs ev)
         {
 
         }
+        */
         
     }
 }

@@ -18,8 +18,8 @@ namespace QOL
         {
             Exiled.Events.Handlers.Player.Verified += EventHandlers.OnVerified;
             Scp096.AddingTarget += EventHandlers.OnAddingTarget;
-            Scp173.Blinking += EventHandlers.OnBlinking;
-            Exiled.Events.Handlers.Player.InteractingDoor += EventHandlers.OnInteractingDoor;
+            //Scp173.Blinking += EventHandlers.OnBlinking;
+            //Exiled.Events.Handlers.Player.InteractingDoor += EventHandlers.OnInteractingDoor;
 
             base.OnEnabled();
         }
@@ -27,8 +27,8 @@ namespace QOL
         {
             Exiled.Events.Handlers.Player.Verified -= EventHandlers.OnVerified;
             Scp096.AddingTarget -= EventHandlers.OnAddingTarget;
-            Scp173.Blinking -= EventHandlers.OnBlinking;
-            Exiled.Events.Handlers.Player.InteractingDoor -= EventHandlers.OnInteractingDoor;
+            //Scp173.Blinking -= EventHandlers.OnBlinking;
+            //Exiled.Events.Handlers.Player.InteractingDoor -= EventHandlers.OnInteractingDoor;
 
             base.OnDisabled();
         }
